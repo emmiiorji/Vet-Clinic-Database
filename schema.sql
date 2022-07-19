@@ -11,3 +11,6 @@ CREATE TABLE animals (
 
 ALTER TABLE animals
     ADD species VARCHAR(100);
+
+ALTER TABLE animals
+    DROP CONSTRAINT animals_weight_kg_check;
