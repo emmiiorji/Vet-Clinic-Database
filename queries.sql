@@ -19,7 +19,9 @@ SELECT * from animals WHERE weight_kg>=10.4 AND weight_kg<=17.3;
 -- Transactions
 BEGIN;
   UPDATE animals SET species='unspecified';
+  SELECT * FROM animals;
 ROLLBACK;
+SELECT * FROM animals;
 
 BEGIN;
   UPDATE animals SET species='digimon' WHERE name LIKE '%mon';
