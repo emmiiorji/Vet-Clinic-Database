@@ -46,3 +46,6 @@ SELECT * FROM animals;
 
 -- Number of animals in animals table
 SELECT COUNT(*) FROM animals;
+
+-- Number of animals that have never tried to escape?
+SELECT COUNT(escape_attempts) FROM animals WHERE escape_attempts < 1;
