@@ -49,3 +49,6 @@ SELECT COUNT(*) FROM animals;
 
 -- Number of animals that have never tried to escape?
 SELECT COUNT(escape_attempts) FROM animals WHERE escape_attempts < 1;
+
+SELECT AVG(weight_kg) FROM animals;
+
