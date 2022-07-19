@@ -19,3 +19,4 @@ VALUES
   ('Boarmon', '2005-06-07', 7, TRUE, 20.4),
   ('Blossom', '1998-10-13', 3, TRUE, 17.0),
   ('Ditto', '2022-05-14', 4, TRUE, 22.0)
+RETURNING *;
