@@ -52,3 +52,5 @@ SELECT COUNT(escape_attempts) FROM animals WHERE escape_attempts < 1;
 
 SELECT AVG(weight_kg) FROM animals;
 
+SELECT neutered, COUNT(escape_attempts) FROM animals
+GROUP BY neutered;
