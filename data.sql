@@ -32,3 +32,9 @@ INSERT INTO
     ('Dean Winchester', 14),
     ('Jodie Whittaker', 38)
 RETURNING *
+
+INSERT INTO
+  species(name)
+  VALUES
+    ('Pokemon'),
+    ('Digimon')
