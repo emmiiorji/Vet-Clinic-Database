@@ -31,4 +31,6 @@ ALTER TABLE animals
 
 ALTER TABLE animals
     ADD species_id INT REFERENCES species(id);
-    
+
+ALTER TABLE animals
+    ADD owner_id INT REFERENCES owner(id);
