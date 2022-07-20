@@ -14,3 +14,10 @@ ALTER TABLE animals
 
 ALTER TABLE animals
     DROP CONSTRAINT animals_weight_kg_check;
+
+
+CREATE TABLE owners(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    age INT NOT NULL
+);
