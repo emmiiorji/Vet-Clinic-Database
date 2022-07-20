@@ -26,7 +26,7 @@ CREATE TABLE species(
     name VARCHAR(100) NOT NULL,
 );
 
-BEGIN
+BEGIN;
 
     ALTER TABLE animals
         DROP COLUMN species;
@@ -37,4 +37,4 @@ BEGIN
     ALTER TABLE animals
         ADD owner_id INT REFERENCES owner(id);
 
-COMMIT
+COMMIT;
