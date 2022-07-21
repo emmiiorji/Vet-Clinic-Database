@@ -70,3 +70,8 @@ SELECT species, AVG(escape_attempts) FROM animals
 SELECT name FROM animals
   JOIN owners ON animals.owner_id=owners.id
   WHERE full_name='Melody Pond';
+
+-- List all animals that are of tyoe Pokemon
+SELECT A.name, A.id from animals A
+  JOIN species S ON A.species_id=S.id
+  WHERE A.name='Pokemon';
