@@ -40,8 +40,10 @@ INSERT INTO
     ('Digimon')
 RETURNING *;
 
-UPDATE animals
-  SET species_id=2 WHERE name LIKE '%mon';
+BEGIN;
+  UPDATE animals
+    SET species_id=2 WHERE name LIKE '%mon';
 
-UPDATE animals
-  SET species_id=1 WHERE name NOT LIKE '%mon';
+  UPDATE animals
+    SET species_id=1 WHERE name NOT LIKE '%mon';
+COMMIT;
