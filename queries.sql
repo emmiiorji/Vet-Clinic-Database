@@ -78,7 +78,7 @@ SELECT A.name, A.id FROM animals A
 
 -- List all owners and their animals including those that don't own any animal.
 SELECT full_name, name FROM animals
-  LEFT JOIN owners ON animals.owner_id = owners.id;
+  FULL JOIN owners ON animals.owner_id = owners.id;
 
 -- Get how many animals there are per species
 SELECT S.id, S.name, COUNT(*) FROM animals A
