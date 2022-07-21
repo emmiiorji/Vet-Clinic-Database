@@ -65,3 +65,8 @@ GROUP BY species;
 SELECT species, AVG(escape_attempts) FROM animals
   WHERE date_of_birth >= CAST('1990-01-01' AS DATE) AND date_of_birth <= CAST('2000-01-01' AS DATE)
   GROUP BY species;
+
+-- Animals owned by Melody Pond
+SELECT name FROM animals
+  JOIN owners ON animals.owner_id=owners.id
+  WHERE full_name='Melody Pond';
