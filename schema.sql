@@ -47,3 +47,8 @@ CREATE TABLE vet(
     CONSTRAINT vet_age_check CHECK(age > 0),
     CONSTRAINT vet_date_of_graduation_check CHECK(date_of_graduation < CURRENT_DATE + 1)
 );
+
+CREATE TABLE specializations(
+    vet_id INT REFERENCES vets(id) NOT NULL,
+    species_id INT REFERENCES species(id) NOT NULL
+);
