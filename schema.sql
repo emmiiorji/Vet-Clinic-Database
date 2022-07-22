@@ -43,5 +43,7 @@ CREATE TABLE vet(
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     age INT NOT NULL,
-    date_of_graduation DATE NOT NULL
+    date_of_graduation DATE NOT NULL,
+    CONSTRAINT vet_age_check CHECK(age > 0),
+    CONSTRAINT vet_date_of_graduation_check CHECK(date_of_graduation < CURRENT_DATE + 1)
 );
