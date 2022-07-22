@@ -38,3 +38,10 @@ BEGIN;
         ADD owner_id INT REFERENCES owners(id);
 
 COMMIT;
+
+CREATE TABLE vet(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    date_of_graduation DATE NOT NULL
+);
