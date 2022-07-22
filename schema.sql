@@ -52,3 +52,9 @@ CREATE TABLE specializations(
     vet_id INT REFERENCES vets(id) NOT NULL,
     species_id INT REFERENCES species(id) NOT NULL
 );
+
+CREATE TABLE visits(
+    animal_id INT REFERENCES animals(id) NOT NULL,
+    vet_id INT REFERENCES vets(id) NOT NULL,
+    visit_date DATE NOT NULL
+);
