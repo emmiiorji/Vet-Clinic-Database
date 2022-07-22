@@ -8,3 +8,9 @@ CREATE TABLE animals (
     neutered BOOLEAN DEFAULT FALSE,
     weight_kg FLOAT NOT NULL CHECK(weight_kg > 0.0)
 );
+
+ALTER TABLE animals
+    ADD species VARCHAR(100);
+
+ALTER TABLE animals
+    DROP CONSTRAINT animals_weight_kg_check;
