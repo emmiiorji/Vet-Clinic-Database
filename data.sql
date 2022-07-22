@@ -75,3 +75,12 @@ INSERT INTO
   ('Stephanie Mendez', 64, '1981-05-04'),
   ('Jack Harkness', 38, '2008-06-08')
 RETURNING *;
+
+INSERT INTO
+  specializations(vet_id, species_id)
+  VALUES
+  (1, 1),
+  (3, 2),
+  (3, 1),
+  (4, 2)
+RETURNING *;
