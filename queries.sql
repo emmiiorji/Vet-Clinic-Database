@@ -35,7 +35,7 @@ ROLLBACK;
 SELECT * FROM animals;
 
 BEGIN;
-  DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+  DELETE FROM animals WHERE date_of_birth > CAST('2022-01-01' AS DATE);
   SAVEPOINT DELETE_DATE_OF_BIRTH;
 
   UPDATE animals SET weight_kg = weight_kg * -1;
@@ -60,3 +60,8 @@ GROUP BY neutered;
 -- Get the maximum and minimum weight of each type of animal
 SELECT species, MAX(weight_kg), MIN(weight_kg) FROM animals
 GROUP BY species;
+
+-- Get the average number of escape attempts per animal type of those born between 1990 and 2000
+SELECT species, AVG(escape_attempts) FROM animals
+  WHERE date_of_birth >= CAST('1990-01-01' AS DATE) AND date_of_birth <= CAST('2000-01-01' AS DATE)
+  GROUP BY species;
