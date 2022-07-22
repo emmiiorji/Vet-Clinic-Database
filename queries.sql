@@ -47,13 +47,16 @@ SELECT * FROM animals;
 -- Number of animals in animals table
 SELECT COUNT(*) FROM animals;
 
--- Number of animals that have never tried to escape?
+-- Number of animals that have never tried to escape
 SELECT COUNT(escape_attempts) FROM animals WHERE escape_attempts < 1;
 
+-- Calculate average weight of animals:
 SELECT AVG(weight_kg) FROM animals;
 
+-- Determine whether neutered or non-neutered animals escape most
 SELECT neutered, COUNT(escape_attempts) FROM animals
 GROUP BY neutered;
 
+-- Get the maximum and minimum weight of each type of animal
 SELECT species, MAX(weight_kg), MIN(weight_kg) FROM animals
 GROUP BY species;
