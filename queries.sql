@@ -121,3 +121,9 @@ SELECT COUNT(DISTINCT A.id) FROM animals A
 SELECT V.id, V.name, Sp.name FROM vets V
   LEFT JOIN specializations S ON v.id = S.vet_id
   LEFT JOIN species Sp ON Sp.id = S.species_id;
+
+-- Get list of all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
+SELECT DISTINCT A.id, A.name FROM animals A
+  JOIN visits Vs ON Vs.animal_id = A.id
+  JOIN vets V ON V.id = Vs.vet_id
+  WHERE V.name = 'Stephanie Mendez' AND Vs.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
