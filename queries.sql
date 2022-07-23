@@ -127,3 +127,9 @@ SELECT DISTINCT A.id, A.name FROM animals A
   JOIN visits Vs ON Vs.animal_id = A.id
   JOIN vets V ON V.id = Vs.vet_id
   WHERE V.name = 'Stephanie Mendez' AND Vs.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
+
+-- Get the animal having the most visits to vets
+SELECT A.id, A.name, COUNT(A.id) FROM visits Vs
+  JOIN animals A ON A.id = Vs.animal_id
+  GROUP BY A.id ORDER BY COUNT(A.id) DESC
+  LIMIT 1;
