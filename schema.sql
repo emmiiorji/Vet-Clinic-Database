@@ -14,3 +14,27 @@ ALTER TABLE animals
 
 ALTER TABLE animals
     DROP CONSTRAINT animals_weight_kg_check;
+
+CREATE TABLE owners(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    age INT NOT NULL
+);
+
+CREATE TABLE species(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+BEGIN;
+
+    ALTER TABLE animals
+        DROP COLUMN species;
+
+    ALTER TABLE animals
+        ADD species_id INT REFERENCES species(id);
+
+    ALTER TABLE animals
+        ADD owner_id INT REFERENCES owners(id);
+
+COMMIT;
