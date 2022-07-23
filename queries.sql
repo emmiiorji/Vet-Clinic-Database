@@ -110,4 +110,10 @@ SELECT O.id, O.full_name, Vs.visit_date FROM animals A
   WHERE V.name = 'William Tatcher'
   ORDER BY Vs.visit_date DESC
   LIMIT 1;
+
+-- Get the number of different animals Stephanie Mendez saw
+SELECT COUNT(DISTINCT A.id) FROM animals A
+  JOIN visits Vs ON A.id = Vs.animal_id
+  JOIN vets V ON Vs.vet_id = V.id
+  WHERE V.name = 'Stephanie Mendez';
   
