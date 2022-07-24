@@ -141,3 +141,10 @@ SELECT A.id, A.name, Vs.visit_date FROM animals A
   WHERE V.name = 'Maisy Smith'
   ORDER BY Vs.visit_date ASC
   LIMIT 1;
+
+-- Get details for most recent visit: animal information, vet information, and date of visit.
+SELECT A.*, V.*, Vs.visit_date FROM animals A
+  JOIN visits Vs ON Vs.animal_id = A.id
+  JOIN vets V ON V.id = Vs.vet_id
+  ORDER BY Vs.visit_date DESC
+  LIMIT 1;
