@@ -153,3 +153,13 @@ SELECT A.*, V.*, Vs.visit_date FROM animals A
 SELECT COUNT(*) FROM visits Vs
   JOIN animals A ON A.id = Vs.animal_id
   JOIN specializations S ON S.vet_id = Vs.vet_id AND A.species_id = S.species_id;
+
+-- Determine the specialty that Maisy Smith should consider getting, look at the species she gets the most.
+SELECT Sp.name, COUNT(A.species_id) FROM visits Vs
+  JOIN animals A ON A.id = Vs.animal_id
+  JOIN vets V ON V.id = Vs.vet_id
+  JOIN species Sp ON Sp.id = A.species_id
+  WHERE V.name = 'Maisy Smith'
+  GROUP BY Sp.name
+  ORDER BY COUNT(Sp.name) DESC
+  LIMIT 1;
