@@ -10,3 +10,9 @@ CREATE TABLE medical_histories (
   patient_id INT REFERENCES patients(id),
   status VARCHAR(100) NOT NULL
 )
+
+CREATE TABLE treatments (
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  type VARCHAR(100) NOT NULL,
+  name VARCHAR(100) NOT NULL
+)
