@@ -2,20 +2,20 @@ CREATE TABLE patients (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   date_of_birth DATE NOT NULL
-)
+);
 
 CREATE TABLE medical_histories (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   admitted_at TIMESTAMP DEFAULT NOW(),
   patient_id INT REFERENCES patients(id),
   status VARCHAR(100) NOT NULL
-)
+);
 
 CREATE TABLE treatments (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   type VARCHAR(100) NOT NULL,
   name VARCHAR(100) NOT NULL
-)
+);
 
 CREATE TABLE  invoices (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -23,4 +23,4 @@ CREATE TABLE  invoices (
   generated_at TIMESTAMP NOT NULL,
   payed_at TIMESTAMP NOT NULL,
   medical_history_id INT REFERENCES medical_histories(id) NOT NULL UNIQUE
-)
+);
