@@ -2,6 +2,7 @@ CREATE TABLE patients (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   date_of_birth DATE NOT NULL
+  CONSTRAINT vet_date_of_birth_check CHECK(date_of_birth < CURRENT_DATE + 1)
 );
 
 CREATE TABLE medical_histories (
