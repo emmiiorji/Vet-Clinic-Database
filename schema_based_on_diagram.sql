@@ -20,7 +20,7 @@ CREATE TABLE treatments (
 CREATE TABLE  invoices (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   total_amount DECIMAL DEFAULT 0.0,
-  generated_at TIMESTAMP NOT NULL,
+  generated_at TIMESTAMP DEFAULT NOW(),
   payed_at TIMESTAMP NOT NULL,
   medical_history_id INT REFERENCES medical_histories(id) NOT NULL UNIQUE
 );
