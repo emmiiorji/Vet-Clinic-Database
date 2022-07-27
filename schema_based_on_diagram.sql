@@ -6,7 +6,7 @@ CREATE TABLE patients (
 
 CREATE TABLE medical_histories (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  admitted_at TIMESTAMP NOT NULL,
+  admitted_at TIMESTAMP DEFAULT NOW(),
   patient_id INT REFERENCES patients(id),
   status VARCHAR(100) NOT NULL
 )
