@@ -25,3 +25,12 @@ CREATE TABLE  invoices (
   payed_at TIMESTAMP NOT NULL,
   medical_history_id INT REFERENCES medical_histories(id) NOT NULL UNIQUE
 );
+
+CREATE TABLE invoice_items (
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  unit_price DECIMAL NOT NULL,
+  quantity INT NOT NULL,
+  total_price DECIMAL NOT NULL,
+  invoice_id INT REFERENCES invoices(id),
+  treatment_id INT REFERENCES treatments(id)
+)
