@@ -34,3 +34,9 @@ CREATE TABLE invoice_items (
   invoice_id INT REFERENCES invoices(id),
   treatment_id INT REFERENCES treatments(id)
 )
+
+CREATE TABLE medical_histories_treatments (
+  medical_history_id INT REFERENCES medical_histories(id),
+  treatment_id INT REFERENCES treatments(id),
+  PRIMARY KEY (medical_history_id, treatment_id)
+)
