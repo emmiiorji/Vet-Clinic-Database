@@ -3,7 +3,7 @@
 > The project contains SQL queries as text files of the PostgreSQL database for a vet clinic.
 
 ## Database Diagram
-![database_diagram](https://user-images.githubusercontent.com/20554583/181484696-e91b03f1-856c-43a5-b3df-53dc03fe77bd.png)
+![database_diagram](./database_diagram.png)
 
 
 ## Getting Started
